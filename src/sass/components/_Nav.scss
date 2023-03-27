@@ -1,0 +1,32 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+
+nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba($color: #000, $alpha: 0.3);
+  @include flex("", 0.9rem);
+  padding: 0.7rem 1.7rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  z-index: 999999;
+  width: max-content;
+  a {
+    background-color: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    color: $color-light;
+    font-size: 1.1rem;
+    display: flex;
+    transition: $transition;
+    &:hover {
+      background-color: rgba($color: #000, $alpha: 0.3);
+    }
+    &.active {
+      background-color: $color-bg;
+      color: $color-white;
+    }
+  }
+}

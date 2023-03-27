@@ -1,0 +1,111 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+
+.about {
+  .about-container {
+    @include flex("", 10%);
+    @include breakpoints(small) {
+      @include flex("", 3rem, column);
+    }
+    @include breakpoints(mobile) {
+      @include flex("", 1rem, column);
+    }
+    .me-container {
+      background-image: linear-gradient(
+        45deg,
+        transparent,
+        $color-primary,
+        transparent
+      );
+      aspect-ratio: 1/1;
+      border-radius: 2rem;
+      place-items: center;
+      width: 35%;
+      @include breakpoints(mobile) {
+        width: 200px;
+      }
+      img {
+        border-radius: 2rem;
+        width: 100%;
+        transform: rotate(10deg);
+        transition: $transition;
+        &:hover {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    .info {
+      width: 55%;
+      @include breakpoints(small) {
+        width: 100%;
+      }
+      @include breakpoints(mobile) {
+        width: 100%;
+      }
+      .acticles-container {
+        @include flex(flex-start, 1.5rem);
+        @include breakpoints(small) {
+          justify-content: center;
+        }
+        @include breakpoints(mobile) {
+          justify-content: center;
+          gap: 0.4rem;
+        }
+        article {
+          @include card();
+          aspect-ratio: 1/1;
+          padding: 2rem;
+          gap: 0.5rem;
+          svg {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+          }
+          h5 {
+            font-size: 0.9rem;
+          }
+          small {
+            font-size: 0.7rem;
+            color: $color-light;
+            white-space: nowrap;
+          }
+          @include breakpoints(mobile) {
+            @include flex("", 0.1rem, column);
+            max-width: 110px;
+            max-height: 7em;
+            margin-top: 7em;
+            svg {
+              margin: 0;
+            }
+            h5 {
+              font-size: 0.7rem;
+            }
+            small {
+              font-size: 0.4rem;
+            }
+          }
+        }
+      }
+      .info-text {
+        @include flex("", 0, column);
+        @include breakpoints(medium) {
+          justify-content: flex-start;
+        }
+        p {
+          margin: {
+            top: 2rem;
+            bottom: 2.6rem;
+          }
+          color: $color-light;
+          @include breakpoints(small) {
+            text-align: center;
+            width: 100%;
+          }
+          @include breakpoints(mobile) {
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

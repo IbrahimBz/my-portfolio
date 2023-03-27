@@ -1,0 +1,107 @@
+@use "./vars" as *;
+@use "./mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: $color-white;
+  line-height: 1.7;
+  background: url(assets/bg-texture.png), $color-bg;
+}
+
+// ###### Global Styles ##### //
+.container {
+  width: $container-width-md;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include breakpoints(small) {
+    width: $container-width-sm;
+  }
+  @include breakpoints(mobile) {
+    width: $container-width-mobile;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  margin-top: 6rem;
+  > h5 {
+    text-align: center;
+    color: $color-light;
+  }
+  > h2 {
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 3rem;
+    @include breakpoints(mobile) {
+      margin-top: 2rem;
+    }
+  }
+}
+.text-light {
+  color: $color-light;
+}
+
+a {
+  color: $color-primary;
+  transition: $transition;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.btn {
+  width: fit-content;
+  display: inline-block;
+  color: $color-primary;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid $color-primary;
+  &.primary {
+    background-color: $color-primary;
+    color: $color-bg;
+  }
+  &:hover {
+    background-color: $color-white;
+    color: $color-bg;
+    border-color: transparent;
+  }
+  transition: $transition;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}

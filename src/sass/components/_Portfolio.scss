@@ -1,0 +1,40 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+
+.portfolio {
+  height: auto;
+  .portfolio-container {
+    ::-webkit-scrollbar {
+      display: block;
+    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    @include breakpoints(small) {
+      gap: 1.2rem;
+    }
+    @include breakpoints(mobile) {
+      gap: 1rem;
+    }
+    .portfolio-item {
+      @include card();
+      padding: 1.3rem;
+      margin: 10px 0;
+      .portfolio-image {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+        }
+      }
+      h3 {
+        margin: 1.2rem 0 2rem;
+      }
+      .cta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

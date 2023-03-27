@@ -1,0 +1,43 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+
+footer {
+  background-color: $color-primary;
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 7rem;
+  a {
+    color: $color-bg;
+    &.logo {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+  }
+  .sections-links {
+    @include flex("", 2rem, row, wrap);
+    margin: 0 auto 3rem;
+    @include breakpoints(mobile) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  .socials-links {
+    @include flex("", 1rem);
+    margin-bottom: 4rem;
+    @include breakpoints(mobile) {
+      margin-bottom: 2.6rem;
+    }
+    a {
+      @include card();
+      padding: 0.8rem;
+      border-radius: 0.7rem;
+    }
+  }
+  .copy-right {
+    margin-bottom: 4rem;
+    color: $color-bg;
+  }
+}

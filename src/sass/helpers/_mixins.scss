@@ -1,0 +1,68 @@
+@use "./vars" as *;
+
+@mixin breakpoints($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == mobile&small {
+    @media screen and (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($justify: "", $gap: 0, $dir: "", $wrap: "", $align-content: "") {
+  display: flex;
+  align-items: center;
+  @if $justify != "" {
+    justify-content: $justify;
+  } @else {
+    justify-content: center;
+  }
+  @if ($gap != 0) {
+    gap: $gap;
+  }
+  @if $align-content != "" {
+    align-content: $align-content;
+  }
+  @if $wrap != "" {
+    flex-wrap: wrap;
+  }
+  @if $dir != "" {
+    flex-direction: $dir;
+  }
+}
+
+@mixin card($width: "", $height: "") {
+  border-radius: 1rem;
+  background-color: $color-bg-variant;
+  @if $width != "" and $height != "" {
+    width: $width;
+    height: $height;
+  }
+  cursor: pointer;
+  transition: $transition;
+  border: 1px solid transparent;
+  @include flex(space-evenly, 0, column);
+  &:hover {
+    background-color: transparent;
+    cursor: default;
+    border: 1px solid $color-bg-variant;
+  }
+  svg {
+    color: $color-primary;
+  }
+}

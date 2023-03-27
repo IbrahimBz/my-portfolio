@@ -1,0 +1,36 @@
+@use "../helpers/vars" as *;
+@use "../helpers/mixins" as *;
+
+.services {
+  .services-container {
+    @include flex();
+    .service {
+      @include card();
+      height: 450px;
+      min-width: 40%;
+      max-width: 100%;
+      overflow: hidden;
+      padding-bottom: 3rem;
+      .service-head {
+        background-color: $color-primary-variant;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-radius: 4rem;
+        transform: translateY(-4rem);
+        padding-bottom: 1rem;
+      }
+      .service__list {
+        @include flex("", 2rem, column);
+        align-items: flex-start;
+        padding: 0 2rem;
+        max-width: 100%;
+        li {
+          @include flex("", 1rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "./helpers/global-rules";
+
+// Components
+@use "./components/Header";
+@use "./components/Nav";
+@use "./components/About";
+@use "./components/Experience";
+@use "./components/Services";
+@use "./components/Portfolio";
+@use "./components/Contact";
+@use "./components/Footer";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wghkt@300;400;500;600&display=swap");
