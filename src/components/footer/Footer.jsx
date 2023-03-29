@@ -4,12 +4,12 @@ import { BsFacebook, BsInstagram, BsLinkedin } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer>
-      <a href="#/" className="logo">
+      <a href="#" className="logo">
         IBRAHIM
       </a>
       <ul className="sections-links">
         <li>
-          <a href="/#">Home</a>
+          <a href="#">Home</a>
         </li>
         <li>
           <a href="#about">About</a>
@@ -29,12 +29,20 @@ const Footer = () => {
       </ul>
       <ul className="socials-links">
         <li>
-          <a href="https://facebook.com/Ibrahim.bzi">
+          <a
+            href="https://www.facebook.com/Ibrahim.bzi/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <BsFacebook />
           </a>
         </li>
         <li>
-          <a href="instagram.com/ib1bz">
+          <a
+            href="https://instagram.com/ib1bz"
+            target="_blank"
+            rel="noreferrer"
+          >
             <BsInstagram />
           </a>
         </li>

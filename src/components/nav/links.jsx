@@ -12,7 +12,7 @@ const NavComponent = () => {
   return (
     <>
       <a
-        href="/#"
+        href="#"
         onClick={() => disptch(setActiveClass("#"))}
         className={activeClass === "#" ? "active" : ""}
         title="Home Page"
